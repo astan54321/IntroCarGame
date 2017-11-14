@@ -1,9 +1,7 @@
 import pygame
 import random
-import shelve
 
 pygame.init()
-d = shelve.open('HighScores.txt')
 
 FPS = 60
 
