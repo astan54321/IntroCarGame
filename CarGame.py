@@ -26,7 +26,7 @@ backImg = pygame.image.load('Background.png')
 backImg = pygame.transform.scale(backImg, (display_width, display_height))
 
 carImg = pygame.image.load('Car.png')
-carImg = pygame.transform.scale(carImg, (carw, carh))  # image resized to 96 x 96
+carImg = pygame.transform.scale(carImg, (carw, carh))
 leftCarImg = pygame.transform.rotate(carImg, turn_angle)
 rightCarImg = pygame.transform.rotate(carImg, -turn_angle)
 
@@ -221,14 +221,13 @@ def game_loop():
         if keys_pressed[pygame.K_RIGHT]:
             carx += deltacar
 
-        # gameDisplay.fill(white)  # make background white
         back(0, back_starty)
 
         # things(thingx, thingy)
         things(thing_startx, thing_starty)
         thing_starty += thing_speed
         back_starty += thing_speed * 2
-        car(carx, cary, False)  # draws car not crashed
+        car(carx, cary, False)
         score_disp(score)
 
         if carx > display_width - 50 - carw or carx < 50:
